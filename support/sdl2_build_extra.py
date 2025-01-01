@@ -4,7 +4,7 @@ import datetime
 
 sep = os.sep
 
-Import("env", "projenv")
+Import("env", "projenv") # type: ignore
 print("Post build scripts > sdl2_build_extra.py")
 
 def after_upload(source, target, env):
@@ -22,5 +22,5 @@ def after_upload(source, target, env):
     
     
     
-env.AddPostAction("upload", after_upload)
-env.AddPostAction("buildprog", after_upload)
+env.AddPostAction("upload", after_upload) # type: ignore
+env.AddPostAction("buildprog", after_upload) # type: ignore
